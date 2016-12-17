@@ -1,0 +1,121 @@
+// author maywzp by 2016-12-17
+
+//按钮紧贴
+.m-btn-group,
+.m-btn-group--vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    > .m-btn {
+        position: relative;
+        float: left;
+    }
+
+    &:focus,
+    &:active,
+    &.active {
+        z-index: 2;
+    }
+
+    @include hover {
+        z-index: 2;
+    };
+}
+
+//缩小按钮间的间距，间距为边框的宽度
+.m-btn-group {
+    .m-btn + .m-btn,
+    .m-btn + .m-btn-group,
+    .m-btn-group + .m-btn,
+    .m-btn-group + .m-btn-group {
+        margin-left: -$input-btn-border-width;
+    }
+}
+
+//按钮边框处理
+.m-btn-group > .m-btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0;
+}
+
+.m-btn-group:not(.m-btn-group--vertical) > .m-btn:first-child {
+    // margin-left: 0;
+    &:not(:last-child):not(.dropdown-toggle){
+        @include border-right-radius(0);
+    }
+}
+
+.m-btn-group:not(.m-btn-group--vertical) > .m-btn:last-child {
+    // margin-left: 0;
+    &:not(:first-child),
+    &.dropdown-toggle:not(:first-child){
+        @include border-left-radius(0);
+    }
+}
+
+//按钮大小
+.m-btn-group--sm > .m-btn {
+    @extend .m-btn--sm;
+}
+
+.m-btn-group--lg > .m-btn {
+    @extend .m-btn--lg;
+}
+
+//垂直按钮组
+.m-btn-group--vertical {
+    > .m-btn,
+    > .m-btn-group,
+    > .m-btn-group > .m-btn {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    > .m-btn-group {
+        @include clearfix();
+
+        > .m-btn {
+            float: none;
+        }
+    }
+
+    > .m-btn + .m-btn,
+    > .m-btn + .m-btn-group,
+    > .m-btn-group + .m-btn,
+    > .m-btn-group + .m-btn-group {
+        margin-top: -$input-btn-border-width;
+        margin-left: 0;
+    }
+}
+
+.m-btn-group--vertical > .m-btn {
+    border-radius: $btn-border-radius;
+
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+
+    &:first-child:not(:last-child){
+        @include border-bottom-radius(0);
+    }
+
+    &:last-child:not(:first-child){
+        @include border-top-radius(0);
+    }
+}
+
+//单选、多选按钮组
+[data-toggle="buttons"] {
+  > .m-btn,
+  > .m-btn-group > .m-btn {
+    input[type="radio"],
+    input[type="checkbox"] {
+      //剪裁绝对定位元素
+      position: absolute;
+      clip: rect(0,0,0,0);
+      pointer-events: none;
+    }
+  }
+}

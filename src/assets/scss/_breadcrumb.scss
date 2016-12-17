@@ -1,0 +1,26 @@
+// author maywzp by 2016-12-17
+
+//面包屑导航
+.m-breadcrumb {
+    padding: $breadcrumb-padding-y $breadcrumb-padding-x;
+    margin-bottom: $spacer-y;
+    background-color: $breadcrumb-bg;
+    @include border-radius($border-radius);
+    @include clearfix();
+}
+
+.m-breadcrumb__item {
+    float: left;
+    //分割线
+    + .m-breadcrumb__item::before {
+        display: inline-block;
+        padding-right: $breadcrumb-item-padding;
+        padding-left: $breadcrumb-item-padding;
+        color: $breadcrumb-divider-color;
+        content: "#{$breadcrumb-divider}";
+    }
+
+    &.active {
+      color: $breadcrumb-active-color;
+    }
+}

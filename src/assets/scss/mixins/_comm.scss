@@ -1,0 +1,24 @@
+// author maywzp by 2016-12-17
+
+//设置阴影
+@mixin box-shadow($shadow...) {
+    @if $enable-shadows {
+        box-shadow: $shadow;
+    }
+}
+
+//设置过渡效果
+@mixin transition($transition...) {
+  @if $enable-transitions {
+      transition: $transition;
+  }
+}
+
+//清除浮动
+@mixin clearfix() {
+  &::after {
+      content: '';
+      display: table;
+      clear: both;
+  }
+}

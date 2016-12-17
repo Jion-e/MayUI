@@ -1,0 +1,16 @@
+// author maywzp by 2016-12-17
+
+//设置不同主题的警告框
+@mixin alert-variant($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    hr {
+        border-top-color: darken($border, 5%);
+    }
+
+    .m-alert__link {
+        color: darken($color, 10%);
+    }
+}

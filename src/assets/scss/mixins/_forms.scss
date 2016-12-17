@@ -1,0 +1,37 @@
+// author maywzp by 2016-12-17
+
+//设置输入框验证
+@mixin form-control-validation() {
+
+}
+
+//输入框获取焦点效果
+@mixin form-control-focus() {
+  &:focus {
+      color: $input-color-focus;
+      background-color: $input-bg-focus;
+      border-color: $input-border-focus;
+      @include box-shadow($input-box-shadow-focus);
+  }
+}
+
+//输入框大小
+@mixin input-size($parent, $input-height, $padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+    #{$parent} {
+        height: $input-height;
+        padding: $padding-y $padding-x;
+        font-size: $font-size;
+        line-height: $line-height;
+        @include border-radius($border-radius);
+    }
+
+    select#{$parent} {
+        height: $input-height;
+        line-height: $input-height;
+    }
+
+    textarea#{$parent},
+    select[multiple]#{$parent} {
+        height: auto;
+    }
+}

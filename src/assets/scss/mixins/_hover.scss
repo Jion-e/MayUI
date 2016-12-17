@@ -1,0 +1,45 @@
+// author maywzp by 2016-12-17
+
+//设置hover效果
+@mixin hover {
+  &:hover {
+      @content
+  }
+}
+
+//设置hover||focus效果
+@mixin hover-focus {
+    @if $enable-hover-media-query {
+        &:focus {
+            @content
+        }
+
+        @include hover {
+            @content
+        }
+    }
+
+    @else {
+        &:focus,
+        &:hover {
+            @content
+        }
+    }
+}
+//hover||focus||active三重奏
+@mixin hover-focus-active {
+  @if $enable-hover-media-query {
+    &:focus,
+    &:active {
+      @content
+    }
+    @include hover { @content }
+  }
+  @else {
+    &:focus,
+    &:active,
+    &:hover {
+      @content
+    }
+  }
+}

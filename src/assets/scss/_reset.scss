@@ -1,0 +1,212 @@
+// author maywzp by 2016-12-17
+
+//样式重置，也有一些排版处理
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+a,article,aside,body,button,dd,details,div,dl,dt,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,img,input,li,menu,nav,ol,p,section,select,table,tbody,td,textarea,th,tr,ul{
+    -webkit-tap-highlight-color:transparent
+}
+
+article,aside,body,dd,details,dl,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,input,legend,menu,nav,ol,p,section,select,td,textarea,th,ul{
+    margin:0;
+    padding:0;
+    border:none;
+    outline:0
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+    display:block
+}
+
+:focus{
+    outline:0
+}
+
+html {
+    font-size: $font-size-root;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  list-style-type: none;
+}
+
+dt {
+  // font-weight: $dt-font-weight;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    // @include tab-focus();
+  }
+}
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+
+  @include hover-focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img{
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+//允许用户手势水平/垂直平移或持续的缩放
+a,area,button,[role="button"],input,label,select,summary,textarea {
+  touch-action: manipulation;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing:0
+  // background-color: $table-bg;
+}
+
+caption {
+  // padding-top: $table-cell-padding;
+  // padding-bottom: $table-cell-padding;
+  // color: $text-muted;
+  text-align: left;
+  caption-side: bottom;
+}
+
+th {
+  text-align: left;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+// button:focus {
+//   outline: 1px dotted;
+//   outline: 5px auto -webkit-focus-ring-color;
+// }
+
+input,button,select,textarea {
+  line-height: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 2px;
+  vertical-align: middle;
+  &:disabled {
+    cursor: $cursor-disabled;
+  }
+}
+
+//允许元素看上去一个listbox样式的复选框按钮
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+fieldset{
+    min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+}
+
+output {
+  display: inline-block;
+}
+
+[hidden] {
+  display: none !important;
+}

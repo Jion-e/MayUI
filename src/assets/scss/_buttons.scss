@@ -1,0 +1,142 @@
+//author maywzp by 2016-12-17
+
+//按钮
+.m-btn {
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    border: $input-btn-border-width solid transparent;
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+    @include transition(all .2s ease-in-out);
+
+    &:active,
+    &.active {
+        @include box-shadow($btn-active-box-shadow);
+    }
+
+    &:disabled,
+    &.disabled {
+        cursor: $cursor-disabled;
+        opacity: .65;
+        @include box-shadow(none);
+    }
+}
+
+//链接按钮不可用，禁止事件
+a.m-btn.disabled,
+fieldset[disabled] a.m-btn{
+    pointer-events: none;
+}
+
+//不同主题的按钮
+.m-btn--primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+.m-btn--secondary {
+    @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.m-btn--info {
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+
+.m-btn--success {
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+
+.m-btn--warning {
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+
+.m-btn--danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+
+//不同主题的镂空按钮
+.m-btn-outline--primary {
+  @include button-outline-variant($btn-primary-bg);
+}
+.m-btn-outline--secondary {
+  @include button-outline-variant($btn-secondary-border);
+}
+.m-btn-outline--info {
+  @include button-outline-variant($btn-info-bg);
+}
+.m-btn-outline--success {
+  @include button-outline-variant($btn-success-bg);
+}
+.m-btn-outline--warning {
+  @include button-outline-variant($btn-warning-bg);
+}
+.m-btn-outline--danger {
+  @include button-outline-variant($btn-danger-bg);
+}
+
+//按钮大小
+.m-btn--lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-border-radius-lg);
+}
+
+.m-btn--sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+}
+
+//100%宽度按钮
+.m-btn--block {
+    display: block;
+    width: 100%;
+}
+
+//100%宽度按钮
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.m-btn--block {
+        width: 100%;
+    }
+}
+
+//链接按钮
+.m-btn--link {
+    font-size: normal;
+    color: $link-color;
+    border-radius: 0;
+
+    &,
+    &:active,
+    &.active,
+    &:disabled {
+        background-color: transparent;
+        @include box-shadow(none);
+    }
+
+    &,
+    &:focus,
+    &:acive {
+        border-color: transparent;
+    }
+
+    @include hover {
+        border-color: transparent;
+    }
+
+    @include hover-focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+        background-color: transparent;
+    }
+
+    &:disabled {
+        @include hover-focus {
+            color: $btn-link-disabled-color;
+            text-decoration: none;
+        }
+    }
+}

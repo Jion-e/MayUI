@@ -1,0 +1,52 @@
+// author maywzp by 2016-12-17
+
+.m-alert {
+    padding: $alert-padding-y $alert-padding-x;
+    margin-bottom: $spacer-y;
+    border: $alert-border-width solid transparent;
+    @include border-radius($alert-border-radius);
+}
+
+.m-alert__header {
+    color: inherit;
+}
+
+.m-alert__link {
+    font-weight: $alert-link-font-weight;
+    @include hover {
+        text-decoration: underline;
+    };
+}
+
+//主题样式
+.m-alert--success {
+    @include alert-variant($alert-success-color, $alert-success-bg, $alert-success-border);
+}
+
+.m-alert--info {
+    @include alert-variant($alert-info-color, $alert-info-bg, $alert-info-border);
+}
+
+.m-alert--warning {
+    @include alert-variant($alert-warning-color, $alert-warning-bg, $alert-warning-border);
+}
+
+.m-alert--danger {
+    @include alert-variant($alert-danger-color, $alert-danger-bg, $alert-danger-border);
+}
+
+//可关闭警告框
+.m-alert--dismissible {
+     position: relative;
+    .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: inherit;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        font-size: $font-size-lg;
+        font-weight: bold;
+    }
+}

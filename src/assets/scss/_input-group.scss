@@ -1,0 +1,84 @@
+// author maywzp by 2016-12-17
+
+//输入框组合，flex布局支持IE9以上，IE8以下暂没做处理
+.m-input-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    .m-form__control {
+        position: relative;
+        flex: 1;
+        margin-bottom: 0;
+        z-index: 2;
+
+        @include hover-focus-active {
+            z-index: 3;
+        };
+    }
+}
+
+//输入框组合大小
+.m-input-group--lg > .m-form__control,
+.m-input-group--lg > .m-input-group__addon,
+.m-input-group--lg > .m-input-group__btn > .m-btn {
+    @extend .m-form__control--lg;
+}
+
+.m-input-group--sm > .m-form__control,
+.m-input-group--sm > .m-input-group__addon,
+.m-input-group--sm > .m-input-group__btn > .m-btn {
+    @extend .m-form__control--sm;
+}
+
+//输入框插件和按钮样式设置
+.m-input-group__addon,
+.m-input-group__btn {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.m-input-group__addon {
+    padding: $input-padding-y $input-padding-x;
+    margin-bottom: 0;
+    font-size: $font-size-base;
+    font-weight: normal;
+    line-height: $input-line-height;
+    color: $input-color;
+    text-align: center;
+    background-color: $input-group-addon-bg;
+    border: $input-btn-border-width solid $input-group-addon-border-color;
+
+    @include border-radius($input-border-radius);
+}
+
+//输入框插件和按钮圆角处理
+.m-input-group__addon,
+.m-input-group__btn,
+.m-input-group .m-form__control {
+    &:not(:first-child):not(:last-child) {
+      @include border-radius(0);
+    }
+}
+
+.m-input-group__addon:not(:last-child),
+.m-input-group__btn:not(:last-child) > .m-btn {
+    @include border-right-radius(0);
+}
+
+.m-input-group__addon:not(:first-child),
+.m-input-group__btn:not(:first-child) > .m-btn {
+     @include border-left-radius(0);
+}
+
+
+//输入框插件和按钮边框处理
+.m-input-group__addon:not(:last-child),
+.m-input-group__btn:not(:last-child) > .m-btn {
+  border-right: 0;
+}
+
+.m-form__control + .m-input-group__addon:not(:first-child),
+.m-form__control + .m-input-group__btn:not(:first-child) > .m-btn {
+  border-left: 0;
+}

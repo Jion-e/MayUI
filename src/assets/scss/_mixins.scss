@@ -1,0 +1,13 @@
+// author maywzp by 2016-12-17
+
+// 公用
+@import "mixins/comm";
+@import "mixins/hover";
+
+// 换肤
+@import "mixins/border-radius";
+
+// 组件
+@import "mixins/buttons";
+@import "mixins/alert";
+@import "mixins/forms";
