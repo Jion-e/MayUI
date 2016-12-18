@@ -1,0 +1,20 @@
+// author maywzp by 2016-12-18
+
+//设置不同主题背景的卡片
+@mixin card-variant($color) {
+    background-color: $color;
+    border-color: $color;
+
+    .m-card__header,
+    .m-card__footer {
+        // color: #fff;
+        // border-color: #fff;
+        background-color: transparent;
+    }
+}
+
+//设置不同主题边框的卡片
+@mixin card-outline-variant($color) {
+    background-color: transparent;
+    border-color: lighten($color, 20%);
+}

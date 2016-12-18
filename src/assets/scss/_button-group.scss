@@ -91,7 +91,7 @@
 }
 
 .m-btn-group--vertical > .m-btn {
-    border-radius: $btn-border-radius;
+    @include border-radius($btn-border-radius)
 
     &:not(:first-child):not(:last-child) {
         border-radius: 0;

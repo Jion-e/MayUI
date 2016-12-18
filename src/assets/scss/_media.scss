@@ -1,0 +1,37 @@
+// author maywzp by 2016-12-18
+
+.m-media {
+    display: flex;
+}
+
+.m-media__body {
+    flex: 1;
+}
+
+.m-media__middle {
+    align-self: center;
+}
+
+.m-media__bottom {
+    align-self: flex-end;
+}
+
+// .m-media__object {
+//     display: block;
+//     &.img-thumbnail {
+//         max-width: none;
+//     }
+// }
+
+.m-media__left {
+    padding-right: $media-alignment-padding-x;
+}
+
+.m-media__right {
+    padding-left: $media-alignment-padding-x;
+}
+
+.m-media__heading {
+    margin-top: 0;
+    margin-bottom: $media-heading-margin-bottom;
+}

@@ -1,0 +1,139 @@
+// author maywzp by 2016-12-18
+
+.m-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $spacer-y;
+    background-color: $table-bg;
+
+    th,
+    td {
+        padding: $table-cell-padding;
+        border-top: $table-border-width solid $table-border-color;
+    }
+}
+
+//紧缩型表格
+.m-table--sm {
+    th,
+    td {
+        padding: $table-sm-cell-padding;
+    }
+}
+
+//加入单元格边框
+.m-table--bordered {
+    border: $table-border-width solid $table-border-color;
+
+    th,
+    td {
+      border: $table-border-width solid $table-border-color;
+    }
+}
+
+//加入斑马线
+.m-table--striped {
+    tbody tr:nth-of-type(odd) {
+        background-color: $table-bg-accent;
+    }
+}
+
+//加入hover效果
+.m-table--hover {
+    tbody tr {
+        @include hover {
+            background-color: $table-bg-hover;
+        }
+    }
+}
+
+//表头背景为黑色
+.thead-inverse {
+  th {
+    color: #fff;
+    background-color: $gray-dark;
+  }
+}
+
+//表头背景为灰色
+.thead-default {
+  th {
+    color: $gray;
+    background-color: $gray-lighter;
+  }
+}
+
+//整个表格背景为黑色
+.m-table--inverse {
+    color: $gray-lighter;
+    background-color: $gray-dark;
+
+    th,
+    td,
+    thead th {
+      border-color: $gray;
+    }
+
+    &.table-bordered {
+      border: 0;
+    }
+}
+
+//不同主题的表格
+@include table-row-variant(active, $table-bg-active);
+@include table-row-variant(success, $state-success-bg);
+@include table-row-variant(info, $state-info-bg);
+@include table-row-variant(warning, $state-warning-bg);
+@include table-row-variant(danger, $state-danger-bg);
+
+
+//自适应表格，不让单元格撑满整个表格
+.m-table--responsive {
+    display: block;
+    width: 100%;
+    min-height: 0%;
+    overflow-x: auto;
+}
+
+//垂直表格
+.m-table--reflow {
+    thead {
+        float: left;
+    }
+
+    tbody {
+        display: block;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        border-top: $table-border-width solid $table-border-color;
+        border-left: $table-border-width solid $table-border-color;
+
+        &:last-child {
+            border-right: $table-border-width solid $table-border-color;
+        }
+    }
+
+    thead,
+    tbody,
+    tfoot {
+        &:last-child {
+            tr:last-child th,
+            tr:last-child td {
+                border-bottom: $table-border-width solid $table-border-color;
+            }
+        }
+    }
+
+    tr {
+        float: left;
+
+        th,
+        td {
+            display: block !important;
+            border: $table-border-width solid $table-border-color;
+        }
+    }
+}

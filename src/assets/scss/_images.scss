@@ -1,0 +1,26 @@
+// author maywzp by 2016-12-18
+
+//图框
+.img-thumbnail {
+    padding: $thumbnail-padding;
+    background-color: $thumbnail-bg;
+    border: $thumbnail-border-width solid $thumbnail-border-color;
+
+    @include border-radius($thumbnail-border-radius)
+
+    @include transition(all .2s ease-in-out)
+
+    @include box-shadow($thumbnail-box-shadow)
+}
+
+//图像撑满
+.full-img {
+    width: 100%;
+}
+
+//背景撑满
+.full-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}

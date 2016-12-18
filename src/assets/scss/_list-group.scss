@@ -1,0 +1,69 @@
+// author maywzp by 2016-12-18
+
+.m-list-group {}
+
+.m-list-group__item {
+    position: relative;
+    display: block;
+    padding: $list-group-item-padding-y $list-group-item-padding-x;
+    margin-bottom: -$list-group-border-width;
+    background-color: $list-group-bg;
+    border: $list-group-border-width solid $list-group-border-color;
+
+    //heading 和 text的字体颜色继承item的字体颜色
+    .heading {
+        margin-top: 0;
+        margin-bottom: $list-group-item-heading-margin-bottom;
+        color: inherit;
+    }
+
+    .text {
+        margin-bottom: 0;
+        line-height: 1.3;
+        color: inherit;
+    }
+
+    //圆角处理
+    &:first-child {
+        @include border-top-radius($list-group-border-radius);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        @include border-bottom-radius($list-group-border-radius);
+    }
+
+    &.disabled {
+        @include plain-hover-focus {
+            color: $list-group-disabled-color;
+            cursor: $cursor-disabled;
+            background-color: $list-group-disabled-bg;
+        }
+    }
+
+    &.active {
+        @include plain-hover-focus {
+            z-index: 2;
+            color: $list-group-active-color;
+            background-color: $list-group-active-bg;
+            border-color: $list-group-active-border-color;
+        }
+    }
+}
+
+//流水线列表项，取消左右两侧的边框
+.m-list-group--flush {
+  .m-list-group__item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+}
+
+//不同主题的列表项
+// @include list-group-item-variant(primary, $state-primary-bg, $state-primary-color);
+@include list-group-item-variant(secondary, $state-secondary-bg, $state-secondary-color);
+@include list-group-item-variant(success, $state-success-bg, $state-success-color);
+@include list-group-item-variant(info, $state-info-bg, $state-info-color);
+@include list-group-item-variant(warning, $state-warning-bg, $state-warning-color);
+@include list-group-item-variant(danger, $state-danger-bg, $state-danger-color);

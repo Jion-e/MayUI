@@ -1,0 +1,22 @@
+// author maywzp by 2016-12-16
+
+@mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+    .m-page__link {
+        padding: $padding-y $padding-x;
+        font-size: $font-size;
+    }
+
+    .m-page__item {
+        &:first-child {
+            .m-page__link {
+                @include border-left-radius($border-radius)
+            }
+        }
+
+        &:last-child {
+            .m-page__link {
+                @include border-right-radius($border-radius)
+            }
+        }
+    }
+}

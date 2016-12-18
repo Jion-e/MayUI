@@ -26,6 +26,25 @@
         }
     }
 }
+
+
+@mixin plain-hover-focus {
+  @if $enable-hover-media-query {
+    &,
+    &:focus {
+      @content
+    }
+    @include hover { @content }
+  }
+  @else {
+    &,
+    &:focus,
+    &:hover {
+      @content
+    }
+  }
+}
+
 //hover||focus||active三重奏
 @mixin hover-focus-active {
   @if $enable-hover-media-query {

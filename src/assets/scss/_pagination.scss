@@ -1,0 +1,70 @@
+// author maywzp by 2016-12-18
+
+.m-pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin-top: $spacer-y;
+    margin-bottom: $spacer-y;
+    @include border-radius()
+}
+
+.m-page__item {
+    display: inline;
+
+    &:first-child {
+        .m-page__link {
+            margin-left: 0;
+            @include border-left-radius($border-radius)
+        }
+    }
+
+    &:last-child {
+        .m-page__link {
+            @include border-right-radius($border-radius)
+        }
+    }
+
+    &.active .m-page__link {
+        @include plain-hover-focus {
+            z-index: 2;
+            color: $pagination-active-color;
+            background-color: $pagination-active-bg;
+            border-color: $pagination-active-border;
+            cursor: default;
+        }
+    }
+
+    &.disabled .m-page__link {
+        @include plain-hover-focus {
+            color: $pagination-disabled-color;
+            background-color: $pagination-disabled-bg;
+            border-color: $pagination-border-color;
+            pointer-events: none;
+            cursor: $cursor-disabled;
+        }
+    }
+}
+
+.m-page__link {
+    position: relative;
+    float: left;
+    padding: $pagination-padding-y $pagination-padding-x;
+    margin-left: -$pagination-border-width;
+    color: $pagination-color;
+    background-color: $pagination-bg;
+    border: $pagination-border-width solid $pagination-border-color;
+
+    @include hover-focus {
+        color: $pagination-hover-color;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border;
+    }
+}
+
+.m-pagination--sm {
+    @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+}
+
+.m-pagination--lg {
+  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $border-radius-lg);
+}

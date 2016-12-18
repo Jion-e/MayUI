@@ -36,6 +36,10 @@
 .m-input-group__btn {
     white-space: nowrap;
     vertical-align: middle;
+
+    .m-btn {
+        @include box-shadow(none);
+    }
 }
 
 .m-input-group__addon {

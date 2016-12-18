@@ -1,0 +1,27 @@
+// author maywzp by 2016-12-18
+
+//设置不同主题的表格
+@mixin table-row-variant($state, $background) {
+  .m-table--#{$state} {
+      &,
+      > th,
+      > td {
+          background-color: $background;
+      }
+  }
+
+  .m-table--hover {
+      $hover-background: darken($background, 5%);
+
+      .m-table--#{$state} {
+          @include hover {
+            background-color: $hover-background;
+
+            > th,
+            > td {
+                background-color: $hover-background;
+            }
+          }
+      }
+  }
+}

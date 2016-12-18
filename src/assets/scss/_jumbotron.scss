@@ -1,0 +1,26 @@
+// author maywzp by 2016-12-18
+
+.m-jumbotron {
+    padding: $jumbotron-padding ($jumbotron-padding/2);
+    margin-bottom: $jumbotron-padding;
+    background-color: $jumbotron-bg;
+
+    @include border-radius($border-radius-lg)
+
+    @media (min-width: 576px) {
+      padding: ($jumbotron-padding * 2) $jumbotron-padding;
+    }
+}
+
+//分割线
+.m-jumbotron__hr {
+    border-top-color: darken($jumbotron-bg, 10%);
+}
+
+//流水线巨屏
+.m-jumbotron--fluid {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include border-radius(0);
+}

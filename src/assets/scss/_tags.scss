@@ -1,0 +1,57 @@
+// author maywzp by 2016-12-18
+
+.m-tag {
+    display: inline-block;
+    padding: $tag-padding-y $tag-padding-x;
+    font-size: $tag-font-size;
+    font-weight: $tag-font-weight;
+    line-height: 1;
+    color: $tag-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    @include border-radius($tag-border-radius);
+
+    &:empty {
+        display: none;
+    }
+}
+
+.m-tag--pill {
+    padding-right: $tag-pill-padding-x;
+    padding-left: $tag-pill-padding-x;
+
+    @include border-radius($tag-pill-border-radius);
+}
+
+.m-tag--sm {
+    @include tag-size($tag-padding-x-sm, $tag-padding-y-sm, $tag-border-radius-sm);
+}
+
+.m-tag--lg {
+    @include tag-size($tag-padding-x-lg, $tag-padding-y-lg, $tag-border-radius-lg);
+}
+
+.m-tag--default {
+    @include tag-variant($tag-default-bg)
+}
+
+.m-tag--primary {
+    @include tag-variant($tag-primary-bg)
+}
+
+.m-tag--success {
+    @include tag-variant($tag-success-bg)
+}
+
+.m-tag--info {
+    @include tag-variant($tag-info-bg)
+}
+
+.m-tag--warning {
+    @include tag-variant($tag-warning-bg)
+}
+
+.m-tag--danger {
+    @include tag-variant($tag-danger-bg)
+}

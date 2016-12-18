@@ -112,7 +112,8 @@ input[type="button"] {
     &,
     &:active,
     &.active,
-    &:disabled {
+    &:disabled,
+    &.disabled {
         background-color: transparent;
         @include box-shadow(none);
     }
@@ -133,7 +134,8 @@ input[type="button"] {
         background-color: transparent;
     }
 
-    &:disabled {
+    &:disabled,
+    &.disabled {
         @include hover-focus {
             color: $btn-link-disabled-color;
             text-decoration: none;

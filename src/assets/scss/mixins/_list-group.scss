@@ -1,0 +1,22 @@
+// author maywzp by 2016-12-18
+
+//设置不同主题的列表项
+@mixin list-group-item-variant($state, $background, $color) {
+  .m-list-group__item--#{$state} {
+      color: $color;
+      background-color: $background;
+
+      @include hover-focus {
+          color: $color;
+          background-color: darken($background, 5%);
+      }
+
+      &.active {
+          @include plain-hover-focus {
+              color: #fff;
+              background-color: $color;
+              border-color: $color;
+          }
+      }
+  }
+}

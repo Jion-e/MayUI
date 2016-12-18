@@ -1,0 +1,21 @@
+// author maywzp by 2016-12-18
+
+//设置不同主题的标签
+@mixin tag-variant($color) {
+  background-color: $color;
+
+  &[href],
+  &[type="button"] {
+      @include hover-focus {
+        color: $tag-link-hover-color;
+        background-color: darken($color, 10%);
+        cursor: pointer;
+      }
+  }
+}
+
+//设置标签大小
+@mixin tag-size($padding-x, $padding-y, $border-radius) {
+  padding: $padding-y $padding-x;
+  @include border-radius($border-radius);
+}

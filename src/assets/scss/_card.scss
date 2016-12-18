@@ -1,0 +1,265 @@
+// author maywzp by 2016-12-18
+
+.m-card {
+    position: relative;
+    display: block;
+    margin-bottom: $card-spacer-y;
+    background-color: $card-bg;
+    border: $card-border-width solid $card-border-color;
+
+    @include border-radius($card-border-radius)
+
+    @include box-shadow($card-box-shadow)
+}
+
+//卡片分区
+.m-card__block {
+    @include clearfix();
+    padding: $card-spacer-x;
+}
+
+//卡片区标题
+.m-card__title {
+    margin-bottom: $card-spacer-y;
+}
+
+//卡片区副标题
+.m-card__subtitle {
+    margin-top: -($card-spacer-x)/2;
+    margin-bottom: 0;
+}
+
+//卡片区段落文字
+.m-card__text:last-child {
+    margin-bottom: 0;
+}
+
+//卡片区多个链接
+.m-card__link {
+    + .m-card__link {
+        margin-left: $card-spacer-x;
+    }
+}
+
+//卡片下的列表组合圆角处理
+.m-card {
+    > .m-list-group:first-child {
+        .m-list-group__item:first-child {
+            @include border-top-radius($card-border-radius)
+        }
+    }
+
+    > .m-list-group:last-child {
+        .m-list-group__item:last-child {
+            @include border-bottom-radius($card-border-radius)
+        }
+    }
+}
+
+//卡片头部
+.m-card__header {
+    @include clearfix();
+    padding: $card-spacer-y $card-spacer-x;
+    margin-bottom: 0;
+    background-color: $card-cap-bg;
+    border-bottom: $card-border-width solid $card-border-color;
+
+    &:first-child {
+        @include border-radius($card-border-radius-inner $card-border-radius-inner 0 0)
+    }
+}
+
+//卡片顶部
+.m-card__footer {
+    @include clearfix();
+    padding: $card-spacer-y $card-spacer-x;
+    background-color: $card-cap-bg;
+    border-top: $card-border-width solid $card-border-color;
+
+    &:last-child {
+      @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner)
+    }
+}
+
+//不同主题背景的卡片
+.m-card--primary {
+    @include card-variant($brand-primary)
+}
+
+.m-card--success {
+    @include card-variant($brand-success)
+}
+
+.m-card--info {
+    @include card-variant($brand-info)
+}
+
+.m-card--warning {
+    @include card-variant($brand-warning)
+}
+
+.m-card--danger {
+    @include card-variant($brand-danger)
+}
+
+//不同主题边框的卡片
+.m-card-outline--primary {
+    @include card-outline-variant($brand-primary)
+}
+
+.m-card-outline--success {
+    @include card-outline-variant($brand-success)
+}
+
+.m-card-outline--info {
+    @include card-outline-variant($brand-info)
+}
+
+.m-card-outline--warning {
+    @include card-outline-variant($brand-warning)
+}
+
+.m-card-outline--danger {
+    @include card-outline-variant($brand-danger)
+}
+
+//黑色卡片
+.m-card--inverse {
+    .m-card__header,
+    .m-card__footer {
+        background-color: $gray-dark;
+        border-color: rgba(255,255,255,.2);
+    }
+
+    .m-card__block {
+        background-color: $gray;
+    }
+
+    .m-card__header,
+    .m-card__footer,
+    .m-card__title,
+    .m-card__blockquote {
+        color: #fff;
+    }
+
+    .m-card__link,
+    .m-card__text,
+    .m-card__subtitle,
+    .m-card__blockquote .blockquote-footer {
+        // color: rgba(255,255,255,.65)
+        color: rgba(255,255,255,.75)
+    }
+
+    .m-card__link {
+        @include hover-focus {
+            color: $card-link-hover-color;
+        };
+    }
+}
+
+//根据需要添加图片圆角：顶部img加top-radius,底部img加bottom-radius
+.m-card__img {
+    @include border-radius($card-border-radius-inner)
+}
+
+.m-card__img--top {
+    @include border-top-radius($card-border-radius-inner)
+}
+
+.m-card__img--bottom {
+    @include border-bottom-radius($card-border-radius-inner)
+}
+
+//覆盖在图片上的元素
+.m-card__img--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: $card-img-overlay-padding;
+}
+
+//卡片组合，卡片之间无间隙
+@media (min-width: 576px) {
+    .m-card-group {
+        display: flex;
+        flex-flow: row wrap;
+
+        .m-card {
+            flex: 1 0 0;
+            @include box-shadow(none);
+
+            + .m-card {
+                margin-left: 0;
+                border-left: 0;
+            }
+            @if $enable-rounded {
+                &:first-child {
+                    @include border-right-radius(0);
+
+                    .m-card__img--top {
+                        border-top-right-radius: 0;
+                    }
+
+                    .m-card__img--bottom {
+                        border-bottom-right-radius: 0;
+                    }
+                }
+
+                &:last-child {
+                    @include border-left-radius(0);
+
+                    .m-card__img--top {
+                        border-top-left-radius: 0;
+                    }
+
+                    .m-card__img--bottom {
+                        border-bottom-left-radius: 0;
+                    }
+                }
+
+                &:not(:first-child):not(:last-child) {
+                    border-radius: 0;
+
+                    .m-card__img--top,
+                    .m-card__img--bottom {
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//卡片组合，卡片之间存在间隙
+@media (min-width: 576px) {
+    .m-card-deck {
+        display: flex;
+        flex-flow: row wrap;
+        margin-right: -$card-deck-margin;
+        margin-left: -$card-deck-margin;
+        margin-bottom: $card-spacer-y;
+
+        .m-card {
+            flex: 1 0 0;
+            margin-right: $card-deck-margin;
+            margin-left: $card-deck-margin;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+//分列式布局，暂不要使用
+@media (min-width: 576px) {
+    .m-card-columns {
+        column-count: 3;
+        column-gap: $card-columns-sm-up-column-gap;
+
+        .m-card {
+            display: inline-block;;
+            width: 100%;
+        }
+    }
+}
