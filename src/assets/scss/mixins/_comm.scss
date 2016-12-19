@@ -22,3 +22,29 @@
       clear: both;
   }
 }
+
+//设置不同主题的背景
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+
+  a#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%) !important;
+    }
+  }
+}
+
+//设置不同主体的字体颜色
+@mixin text-variant($parent, $color) {
+  #{$parent} {
+    color: $color !important;
+  }
+
+  a#{$parent} {
+    @include hover-focus {
+      color:darken($color, 10%) !important;
+    }
+  }
+}

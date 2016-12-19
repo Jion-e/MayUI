@@ -1,0 +1,82 @@
+// author maywzp by 2016-12-19
+
+//清除浮动
+.clearfix {@include clearfix();}
+
+//行内元素垂直定位
+.align-baseline {vertical-align: baseline !important;}
+.align-top {vertical-align: top !important;}
+.align-middle {vertical-align: middle !important;}
+.align-bottom {vertical-align: bottom !important;}
+.align-text-top {vertical-align: text-top !important;}
+.align-text-bottom {vertical-align: text-bottom !important;}
+
+//行内元素水平定位
+.text-left{text-align: left !important;}
+.text-center{text-align: center !important;}
+.text-right{text-align: right !important;}
+
+//改变元素的显示效果
+.d-block {display: block !important;}
+.d-inline {display: inline !important;}
+.d-inline-block {display: inline-block !important;}
+
+//字体 => 样式
+.font-weight-bold {font-weight: bold;}
+.font-weight-normal {font-weight: normal;}
+//斜体
+.font-italic {font-style: italic;}
+
+//字体 => 转换
+.text-lowercase      { text-transform: lowercase !important; }
+.text-uppercase      { text-transform: uppercase !important; }
+//首字母大写
+.text-capitalize     { text-transform: capitalize !important; }
+
+
+//文字分散布局
+.text-justify{text-align: justify;-moz-text-align-last: justify;-webkit-text-align-last: justify;text-align-last: justify;}
+
+//文字省略
+.text-truncate{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+//水平居中
+.center-block{display: block;margin-left: auto;margin-right: auto;}
+
+//字体颜色
+.text-white {color: #fff !important;}
+
+@include text-variant('.text-primary', $brand-primary);
+@include text-variant('.text-success', $brand-success);
+@include text-variant('.text-info', $brand-info);
+@include text-variant('.text-warning', $brand-warning);
+@include text-variant('.text-danger', $brand-danger);
+@include text-variant('.text-variant', $brand-inverse);
+
+
+//背景
+.bg-faded {background-color: $gray-lightest;}
+
+@include bg-variant('.bg-primary', $brand-primary);
+@include bg-variant('.bg-success', $brand-success);
+@include bg-variant('.bg-info', $brand-info);
+@include bg-variant('.bg-warning', $brand-warning);
+@include bg-variant('.bg-danger', $brand-danger);
+@include bg-variant('.bg-inverse', $brand-inverse);
+
+
+//关闭按钮定位，需要用 '&times;' 显示出icon
+.close {float:right;font-size: $close-font-size;font-weight: $close-font-weight;line-height: 1;color: $close-color;text-shadow: $close-text-shadow;opacity: .2;
+  @include hover-focus {color: $close-color;opacity: .5;cursor: pointer;}
+}
+
+//button + .closea样式处理
+button.close {padding: 0;background:transparent;cursor: pointer;-webkit-appearance: none;}
+
+//圆角
+.rounded {@include border-radius($border-radius);}
+.rounded-top {@include border-top-radius($border-radius);}
+.rounded-right {@include border-right-radius($border-radius);}
+.rounded-bottom {@include border-bottom-radius($border-radius);}
+.rounded-left {@include border-left-radius($border-radius);}
+.rounded-circle {border-radius: 50%;}

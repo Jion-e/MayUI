@@ -76,6 +76,9 @@ $display2-weight:           300 !default;
 $display3-weight:           300 !default;
 $display4-weight:           300 !default;
 
+//层叠值
+$z-index-tooltip:           1070 !default;
+
 //边框
 $border-width:              1px !default;
 $border-radius:             .25rem !default;
@@ -134,6 +137,12 @@ $blockquote-small-color:    $gray-light !default;
 $blockquote-font-size:      ($font-size-base * 1.25) !default;
 $blockquote-border-color:   $brand-primary !default;
 $blockquote-border-width:   .25rem !default;
+
+//关闭icon
+$close-font-size:            ($font-size-base * 1.5 )!default;
+$close-font-weight:         bold !default;
+$close-color:               #000 !default;
+$close-text-shadow:         0 1px 0 #fff !default;
 
 //链接
 $link-color:                $brand-primary !default;
@@ -396,3 +405,15 @@ $pagination-active-border:   $brand-primary !default;
 $pagination-disabled-color: $gray-light !default;
 $pagination-disabled-bg:    #fff !default;
 $pagination-disabled-border: #ddd !default;
+
+//tip提示
+$tooltip-color:             #fff !default;
+$tooltip-bg:                #000 !default;
+$tooltip-opacity:           .9 !default;
+$tooltip-max-width:         200px !default;
+$tooltip-padding-y:         3px !default;
+$tooltip-padding-x:         8px !default;
+$tooltip-margin:            3px !default;
+
+$tooltip-arrow-width:       5px;
+$tooltip-arrow-color:       $tooltip-bg !default;

@@ -9,7 +9,8 @@ cooking.set({
   template: './index.tpl',
 
   devServer: {
-    port: 8080,
+    hostname: '192.168.1.155',
+    port: 1000,
     publicPath: '/'
   },
 
@@ -29,7 +30,7 @@ cooking.set({
   alias: {
     'src': path.join(__dirname, 'src')
   },
-  extends: ['vue2', 'lint', 'sass', 'autoprefixer']
+  extends: ['vue2', 'sass', 'autoprefixer']
 });
 
 module.exports = cooking.resolve();

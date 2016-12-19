@@ -16,6 +16,9 @@
     <v-jumbotron></v-jumbotron>
     <v-pagination></v-pagination>
     <v-display></v-display>
+    <v-comm></v-comm>
+
+    <v-tooltip></v-tooltip>
   </div>
 </template>
 
@@ -34,9 +37,17 @@
   import vJumbotron from './components/v-jumbotron.vue';
   import vPagination from './components/v-pagination.vue';
   import vDisplay from './components/v-display.vue';
+  import vComm from './components/v-comm.vue';
+  import vTooltip from './components/v-tooltip.vue';
+
+
+  import tooltip from './assets/js/tooltip'
   export default {
     name: 'app',
-    components: { vButtons, vButtonGroup, vAlert, vBreadcrumb, vForm, vInputGroup, vListGroup, vMedia, vTable, vTag, vCard, vJumbotron, vPagination, vDisplay}
+    mounted(){
+      tooltip()
+    },
+    components: { vButtons, vButtonGroup, vAlert, vBreadcrumb, vForm, vInputGroup, vListGroup, vMedia, vTable, vTag, vCard, vJumbotron, vPagination, vDisplay, vComm, vTooltip}
   };
 </script>
 
