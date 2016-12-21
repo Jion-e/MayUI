@@ -78,6 +78,8 @@ $display4-weight:           300 !default;
 
 //层叠值
 $z-index-tooltip:           1070 !default;
+$z-index-modal-bg:          1040 !default;
+$z-index-modal:             1050 !default;
 
 //边框
 $border-width:              1px !default;
@@ -417,3 +419,27 @@ $tooltip-margin:            3px !default;
 
 $tooltip-arrow-width:       5px;
 $tooltip-arrow-color:       $tooltip-bg !default;
+
+//modal
+$modal-top:                 10% !default;
+$modal-inner-padding:       15px !default;
+$modal-dialog-margin:       20px !default;
+
+$modal-title-padding:       15px !default;
+$modal-title-line-height:   $line-height-base !default;
+
+$modal-content-bg:          #fff !default;
+$modal-content-border-color: rgba(0,0,0,.2) !default;
+$modal-content-border-width: $border-width !default;
+$modal-content-box-shadow:   0 3px 9px rgba(0,0,0,.5) !default;
+
+$modal-backdrop-bg:         #000 !default;
+$modal-backdrop-opacity:    .5 !default;
+$modal-header-border-color: #e5e5e5 !default;
+$modal-footer-border-color: $modal-header-border-color !default;
+$modal-header-border-width: $modal-content-border-width !default;
+$modal-footer-border-width: $modal-header-border-width !default;
+
+$modal-lg:                  900px !default;
+$modal-md:                  600px !default;
+$modal-sm:                  300px !default;

@@ -8,6 +8,9 @@
 //重置样式
 @import "reset";
 
+//动画
+@import "animation";
+
 //引入组件
 @import "buttons";
 @import "button-group";
@@ -28,3 +31,4 @@
 @import "hidden";
 
 @import "tooltip";
+@import "modal";

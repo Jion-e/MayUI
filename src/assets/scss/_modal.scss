@@ -1,33 +1,38 @@
 // author maywzp by 2016-12-19
 
-.m-modal--open {
-  overflow: hidden;
-}
+// .m-modal--open {
+//   overflow: hidden;
+// }
 
 .m-modal {
   position: fixed;
   display: none;
-  top: 0;
+  top: $modal-top;
   right: 0;
   bottom: 0;
   left: 0;
   overflow: hidden;
+  margin: auto;
   z-index: $z-index-modal;
 
-  &.fade .m-modal__dialog {
-    transition: transform .3s ease-out;
-    transform: translate(0, -25%);
+  &.in {
+      display:block;
   }
-
-  &.in .m-modal__dialog {
-    transform: translate(0, 0);
-  }
+  //
+  // &.fade .m-modal__dialog {
+  //   transition: transform .3s ease-out;
+  //   transform: translate(0, -25%);
+  // }
+  //
+  // &.in .m-modal__dialog {
+  //   transform: translate(0, 0);
+  // }
 }
 
-.m-modal--open .m-modal {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+// .m-modal--open .m-modal {
+//   overflow-x: hidden;
+//   overflow-y: auto;
+// }
 
 .m-modal__dialog {
   position: relative;
@@ -43,5 +48,85 @@
 
   @include border-radius($border-radius-lg);
 
-  @include box-shadow($modal-content-xs-box-shadow);
+  @include box-shadow($modal-content-box-shadow);
+}
+
+.m-modal__header {
+  padding: $modal-title-padding;
+  border-bottom: $modal-header-border-width solid $modal-header-border-color;
+
+  @include clearfix()
+}
+
+.m-modal__footer {
+  padding: $modal-inner-padding;
+  text-align: right;
+  border-top: $modal-footer-border-width solid $modal-footer-border-color;
+
+  @include clearfix()
+}
+
+.m-modal__header .close {
+  margin-top: -2px;
+}
+
+.m-modal__title {
+  margin: 0;
+  line-height: $modal-title-line-height;
+}
+
+.m-modal__body {
+  position: relative;
+  padding: $modal-inner-padding;
+}
+
+//modal尺寸
+.m-modal--sm {
+  max-width: $modal-sm;
+}
+
+.m-modal--md {
+  max-width: $modal-md;
+}
+
+.m-modal--lg {
+  max-width: $modal-lg;
+}
+
+//modal尺寸自适应
+@media (max-width: 576px) {
+  .m-modal {
+    max-width: $modal-sm
+  }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  .m-modal {
+    max-width: $modal-md;
+  }
+}
+
+@media (min-width: 992px) {
+  .m-model {
+    max-width: $modal-lg
+  }
+}
+
+//modal 遮挡层
+.m-modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $modal-backdrop-bg;
+  z-index: $z-index-modal-bg;
+
+  // &.fade {
+  //   opacity: 0;
+  // }
+
+  &.in {
+    opacity: $modal-backdrop-opacity;
+  }
 }

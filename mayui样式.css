@@ -1,26 +1,26 @@
 ﻿Alert（警告框）
 .m-alert
-.m-alert__header
-.m-alert__link
+	> .m-alert__header
+	> .m-alert__link
 
 .m-alert--success
 .m-alert--info
 .m-alert--warning
 .m-alert--danger
 
-.m-alert--dismissible
+.m-alert--dismissible	>
 	> .close
 
 Breadcrumb（面包屑导航）
-.m-breadcrumb 
+.m-breadcrumb
 .m-breadcrumb__item
 	+ .active
-	
+
 Button（按钮）
 .m-btn
 	+ .active
 	+ .disabled
-	
+
 .m-btn--primary
 .m-btn--secondary
 .m-btn--info
@@ -42,7 +42,7 @@ Button（按钮）
 .m-btn--link
 	+ .active
 	+ .disabled
-	
+
 ButtonGroup（按钮组合）
 .m-btn-group
 	+ .active
@@ -54,13 +54,17 @@ ButtonGroup（按钮组合）
 
 Card（卡片）
 .m-card
-.m-card__header
-.m-card__footer
-.m-card__block
-.m-card__title
-.m-card__subtitle
-.m-card__text
-.m-card__link
+	> .m-card__header
+	> .m-card__footer
+	> .m-card__block
+		> .m-card__title
+		> .m-card__subtitle
+		> .m-card__text
+		> .m-card__link
+	> .m-card__img
+	> .m-card__img--top
+	> .m-card__img--bottom
+	> .m-card__img--overlay
 
 .m-card--primary
 .m-card--success
@@ -76,10 +80,6 @@ Card（卡片）
 
 .m-card--inverse
 
-.m-card__img
-.m-card__img--top
-.m-card__img--bottom
-.m-card__img--overlay
 
 .m-card-group
 .m-card-deck
@@ -162,13 +162,13 @@ Display（排版）
 .display-4
 
 .blockquote
-.blockquote--reverse 
+.blockquote--reverse
 .blockquote__footer
 
 Form（表单）
 .m-form__group
-.m-form__file
-.m-form__control
+	> .m-form__file
+	> .m-form__control
 
 .m-form__control--sm
 .m-form__control--lg
@@ -182,12 +182,11 @@ Images（图片）
 
 InputGroup（输入框组合）
 .m-input-group
+	> .m-input-group__addon
+	> .m-input-group__btn
 
 .m-input-group--sm
 .m-input-group--lg
-
-.m-input-group__addon
-.m-input-group__btn
 
 ListGroup（列表组合）
 .m-list-group
@@ -214,6 +213,20 @@ Media（媒体元素布局）
 .m-media__left
 .m-media__right
 
+Modal（弹出层）
+.m-modal
+	+ .in
+	> .m-modal__dialog
+		> .m-modal__content
+			> .m-modal__header
+				> .m-modal__title
+				> .close
+			> .m-modal__body
+			> .m-modal__footer
+.m-modal--sm
+.m-modal--md
+.m-modal--lg
+
 Pagination（分页）
 .m-pagination
 	> .m-page__item
@@ -234,7 +247,7 @@ Table（表格）
 .thead-inverse
 .thead-default
 
-table,tr 
+table,tr
 	+ .m-table--active
 	+ .m-table--success
 	+ .m-table--info

@@ -19,6 +19,7 @@
     <v-comm></v-comm>
 
     <v-tooltip></v-tooltip>
+    <v-modal></v-modal>
   </div>
 </template>
 
@@ -39,6 +40,7 @@
   import vDisplay from './components/v-display.vue';
   import vComm from './components/v-comm.vue';
   import vTooltip from './components/v-tooltip.vue';
+  import vModal from './components/v-modal.vue';
 
 
   import tooltip from './assets/js/tooltip'
@@ -47,7 +49,7 @@
     mounted(){
       tooltip()
     },
-    components: { vButtons, vButtonGroup, vAlert, vBreadcrumb, vForm, vInputGroup, vListGroup, vMedia, vTable, vTag, vCard, vJumbotron, vPagination, vDisplay, vComm, vTooltip}
+    components: { vButtons, vButtonGroup, vAlert, vBreadcrumb, vForm, vInputGroup, vListGroup, vMedia, vTable, vTag, vCard, vJumbotron, vPagination, vDisplay, vComm, vTooltip, vModal}
   };
 </script>
 
